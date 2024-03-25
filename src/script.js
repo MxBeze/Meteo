@@ -9,3 +9,6 @@ cityElement.innerHTML = searchInput.value;
 
 let searchFormElement = document.querySelector("#search-form");
 searchFormElement.addEventListener("submit", displayTemperature)
+
+let apiKey = "312a98ffb2fdc23b3521b024dt925odb";
+let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=metric`;
