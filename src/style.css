@@ -57,12 +57,12 @@ display: flex;
 .weather-icon{
 font-size: 44px;
 margin-top: 22px;
-margin-left: 10px;
 }
 
 .weather-degree{
 font-size: 88px;
 font-weight: bold;
+margin-left: 10px;
 }
 
 .weather-unit{
