@@ -1,2 +1,2 @@
 # Met
- Weather Application
+ Weather Journal
