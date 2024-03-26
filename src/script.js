@@ -12,6 +12,8 @@ let windElement = document.querySelector("#wind");
 
 let timeElement = document.querySelector("#time");
 
+let date = new Date(response.data.time * 1000);
+
 let iconElement = document.querySelector("#weather-icon");
 
 
@@ -19,22 +21,25 @@ cityElement.innerHTML = response.data.city;
 descriptionElement.innerHTML = response.data.condition.description;
 humidityElement.innerHTML = `${response.data.temperature.humidity}%`;
 windElement.innerHTML = `${response.data.wind.speed}km/h`;
-timeElement.innerHTML = formatDate();
+timeElement.innerHTML = formatDate(date);
 temperatureElement.innerHTML = Math.round(temperature);
 iconElement.innerHTML = `<img src="${response.data.condition.icon_url}" class="weather-app-icon" />`;
 }
 
-function formatDate(){
-let currentDate = new Date();
-let currentDay = currentDate.toLocaleString("en-UK", { weekday: "long" });
-let currentTime = currentDate.toLocaleString("en-UK", {
-hour: "numeric",
-minute: "numeric",
-hour12: false,
-});
 
-return `${currentDay} ${currentTime}, `;
+function formatDate(date) {
+let minutes = date.getMinutes();
+let hours = date.getHours();
+let days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday",];
+let day = days[date.getDay()];
+  
+if (minutes < 10) {
+minutes = `0${minutes}`;
 }
+  
+return `${day} ${hours}:${minutes}, `;
+}
+
 
 function searchCity(city){
 let apiKey = "312a98ffb2fdc23b3521b024dt925odb";
