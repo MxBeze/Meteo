@@ -24,6 +24,8 @@ windElement.innerHTML = `${response.data.wind.speed}km/h`;
 timeElement.innerHTML = formatDate(date);
 temperatureElement.innerHTML = Math.round(temperature);
 iconElement.innerHTML = `<img src="${response.data.condition.icon_url}" class="weather-app-icon" />`;
+
+displayForecast(response.data.city);
 }
 
 
@@ -57,10 +59,16 @@ searchCity(searchInput.value)
 }
 
 let searchFormElement = document.querySelector("#search-form");
-searchFormElement.addEventListener("submit", displayTemperature)
+searchFormElement.addEventListener("submit", displayTemperature);
 
-function displayForecast (){
-let forecastElement = document.querySelector("#forecast");
+function displayForecast(city){
+let apiKey = "312a98ffb2fdc23b3521b024dt925odb";
+let apiUrl = `https://api.shecodes.io/weather/v1/forecast?query=${city}&key=${apiKey}&units=metric`;
+axios(apiUrl).then(getForecast);
+}
+
+function getForecast(response){
+console.log(response.data);
 
 let days = ["Sun", "Mon", "Tue", "Wed", "Thur", "Fri", "Sat",];
 let forecastHtml = "";
@@ -78,11 +86,11 @@ forecastHtml = forecastHtml + `<div class="forecasts">
 </div>`;
 }); 
 
+let forecastElement = document.querySelector("#forecast"); 
 forecastElement.innerHTML = forecastHtml;
 }
 
 searchCity("Calgary");
-displayForecast();
 
 
 
