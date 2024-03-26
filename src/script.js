@@ -12,29 +12,25 @@ let windElement = document.querySelector("#wind");
 
 let timeElement = document.querySelector("#time");
 
-let date = new Date (response.data.time * 1000);
 
 cityElement.innerHTML = response.data.city;
 descriptionElement.innerHTML = response.data.condition.description;
 humidityElement.innerHTML = `${response.data.temperature.humidity}%`;
 windElement.innerHTML = `${response.data.wind.speed}km/h`;
-timeElement.innerHTML = formatDate(date);
+timeElement.innerHTML = formatDate();
 temperatureElement.innerHTML = Math.round(temperature);
 }
 
-function formatDate(date){
-let hours = date.getHours();
-let minutes = date.getMinutes();
-let days = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday",];
+function formatDate(){
+let currentDate = new Date();
+let currentDay = currentDate.toLocaleString("en-UK", { weekday: "long" });
+let currentTime = currentDate.toLocaleString("en-UK", {
+hour: "numeric",
+minute: "numeric",
+hour12: false,
+});
 
-let day = days[date.getDay()];
-
-if (minutes <10){
-minutes `0${minutes}`;
-}
-
-return `${day} ${hours}:${minutes}, `;
-
+return `${currentDay} ${currentTime}, `;
 }
 
 function searchCity(city){
