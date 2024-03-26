@@ -8,9 +8,12 @@ let descriptionElement = document.querySelector("#description");
 
 let humidityElement = document.querySelector("#humidity");
 
+let windElement = document.querySelector("#wind");
+
 cityElement.innerHTML = response.data.city;
 descriptionElement.innerHTML = response.data.condition.description;
-humidityElement.innerHTML = response.data.temperature.humidity;
+humidityElement.innerHTML = `${response.data.temperature.humidity}%`;
+windElement.innerHTML = response.data.wind.speed;
 temperatureElement.innerHTML = Math.round(temperature);
 }
 
