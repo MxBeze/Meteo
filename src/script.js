@@ -56,8 +56,33 @@ let searchInput = document.querySelector("#search-input");
 searchCity(searchInput.value)
 }
 
-
 let searchFormElement = document.querySelector("#search-form");
 searchFormElement.addEventListener("submit", displayTemperature)
 
+function displayForecast (){
+let forecastElement = document.querySelector("#forecast");
+
+let days = ["Sun", "Mon", "Tue", "Wed", "Thur", "Fri", "Sat",];
+let forecastHtml = "";
+
+days.forEach(function(day) {
+forecastHtml = forecastHtml + `<div class="forecasts">
+<div class="forecast-day">${day}</div>
+<div class="forecast-icon">⛈️</div>
+<div class="forecast-temperatures">
+<div class="forecast-temperature">
+<strong>15º</strong>
+</div>
+<div class="forecast-temperature">9º</div>
+</div>
+</div>`;
+}); 
+
+forecastElement.innerHTML = forecastHtml;
+}
+
 searchCity("Calgary");
+displayForecast();
+
+
+
