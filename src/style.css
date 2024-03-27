@@ -41,6 +41,7 @@ padding: 20px 0;
 
 .weather-city{
 margin: 0;
+color: #081f37;
 font-size: 38px;
 line-height: 48px;
 }
@@ -63,11 +64,13 @@ height: 88px;
 font-size: 88px;
 font-weight: bold;
 margin-left: 10px;
+color: #081f37;
 }
 
 .weather-unit{
 margin-top: 16px;
 font-size: 28px;
+color: #081f37;
 }
 
 .weather-details{
@@ -83,14 +86,14 @@ color: #f65282;
 .forecast {
 display: flex;
 justify-content: space-around;
-margin-top: 30px;
+margin-top: 35px;
 }
   
 .forecast-day {
 text-align: center;
-color: rgba(39, 33, 66, 0.4);
+color: rgba(40, 34, 67, 0.5);
 font-size: 16px;
-line-height: 20px;
+line-height: 5px;
 margin-bottom: 0px;
 }
   
