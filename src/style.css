@@ -36,7 +36,7 @@ margin-left: 3px;
 }
 
 main{
-padding: 30px 0;
+padding: 20px 0;
 }
 
 .weather-city{
@@ -80,7 +80,6 @@ color: rgba(39, 33, 66, 0.4);
 color: #f65282;
 }
 
-
 .forecast {
 display: flex;
 justify-content: space-around;
@@ -92,20 +91,19 @@ text-align: center;
 color: rgba(39, 33, 66, 0.4);
 font-size: 16px;
 line-height: 20px;
-margin-bottom: 10px;
+margin-bottom: 0px;
 }
   
 .forecast-icon {
-width: 88px;
-height: 88px;
+width: 70px;
+height: 70px;
 display: block;
-margin: 0 auto;
 }
 
 .forecast-temperatures {
 text-align: center;
 color: #1e9eb8;
-margin-top: 10px;
+margin-top: 5px;
 display: flex;
 justify-content: center;
 }
@@ -122,6 +120,6 @@ footer{
 font-size: 14px;
 color: rgba(0, 0, 0, 0.6);
 border-top: 1px solid whitesmoke;
-padding: 30px 0 0 0;
+padding: 20px 0 0 0;
 text-align: center;
 }
